@@ -838,17 +838,24 @@
 
     function displayRadioValue($question) {
 
-        for(i = 0; i < $question.length; i++) {
-            if($question[i].checked) {
-                if ($question[i] === "global") {
+        for (i = 0; i < $question.length; i++) {
+            if ($question[i].checked) {
+                if (document.getElementsByName("global") === $question)
+                {
                     $globalScoreFinal += parseFloat($question[i].value);
-                    } else if (document.getElementsByName($question[i])  == "E2" || "E7" || "E4" || "E5" || "E3" || "E6") {
+                }
+                if ($question   === document.getElementsByName("E2") || document.getElementsByName("E7") || document.getElementsByName("E4") || document.getElementsByName("E5") || document.getElementsByName("E3") || document.getElementsByName("E6"))
+                {
                     $eScore += parseFloat($question[i].value);
                     $total += parseFloat($question[i].value);
-                } else if (document.getElementsByName($question[i])  == "F1" || "F5" || "F3" || "F2" || "F4") {
+                }
+                if ($question === document.getElementsByName("F1") || document.getElementsByName("F5") || document.getElementsByName("F3") || document.getElementsByName("F2") || document.getElementsByName("F4"))
+                {
                     $fScore += parseFloat($question[i].value);
                     $total += parseFloat($question[i].value);
-                } else if (document.getElementsByName($question[i])  == "P2" || "P6" || "P7" || "P3" || "P8" || "P5" || "P1" || "P4") {
+                }
+                if ($question === document.getElementsByName("P2") || document.getElementsByName("P6")|| document.getElementsByName("P7") || document.getElementsByName("P3") || document.getElementsByName("P8") || document.getElementsByName("P5") || document.getElementsByName("P1") || document.getElementsByName("P4"))
+                {
                     $pScore += parseFloat($question[i].value);
                     $total += parseFloat($question[i].value)
                 }
@@ -856,10 +863,10 @@
         }
     }
 
+
     function runEverything() {
 
-        document.getElementById("compositeScore").innerHTML = 0;
-        document.getElementById("globalAnswer").innerHTML = 0;
+
 
         displayRadioValue($globalScore);
         displayRadioValue($E2);
@@ -889,7 +896,10 @@
         document.getElementById("eScore").innerHTML = $eScore;
 
     }
-
+    var inp = document.getElementsByTagName('input');
+    for (var i = inp.length-1; i>=0; i--) {
+        if ('radio'===inp[i].type) inp[i].checked = false;
+    }
 
 </script>
 
