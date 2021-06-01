@@ -8,9 +8,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
+
+
+
     <title>M.D.A.D.I Calculator</title>
 </head>
-    <body class="antialiased">
+
+
+
+<body class="antialiased">
     <div class="container-fluid">
         <div class="title m-b-md">
             <h1 class="display-1 text-center">M.D.A.D.I. calculator</h1>
@@ -606,7 +612,7 @@
                 Strongly Disagree
             </label>
         </div><hr>
-    </div>
+
 
     <!---------------------------------------------------------------------------------------------------------------------
 -------------------------------------------QUESTION SIXTEEN-------------------------------------------------
@@ -753,173 +759,139 @@
             Strongly Disagree
         </label>
     </div><hr>
+<!---------------------------------------------------------------------------------------------------------------------
+-------------------------------------------BUTTON -------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------->
 
-
+    <div class="container text-center">
+    <button type="button" onclick="runEverything()">
+        Submit
+    </button>
+    </div>
 
 <div class="container text-center">
     <div class="lead">
         Total 'E' Score =
+        <div id="eScore"></div>
     </div>
     <div class="lead">
         Total 'F' Score =
+        <div id="fScore"></div>
     </div>
     <div class="lead">
         Total 'P' Score =
+        <div id="pScore"></div>
     </div>
     <br>
 
-    <div class="lead">
+    <div class="lead" >
     Global Score =
+        <div id="globalAnswer"></div>
     </div>
     <br>
 
-    <div class="lead">
+    <div class="lead" >
         Composite Score =
+        <div id = "compositeScore"> </div>
     </div>
     <hr>
 </div>
 
-
     </div>
 
 
-    </body>
 
-<!---->
-<!--{{--    $stronglyAgree = 1;--}}-->
-<!--{{--    $agree = 2;--}}-->
-<!--{{--    $noOpinion = 3;--}}-->
-<!--{{--    $disagree = 4;--}}-->
-<!--{{--    $stronglyDisagree = 5;--}}-->
-<!---->
-<!--{{--    $rstronglyAgree = 1;--}}-->
-<!--{{--    $ragree = 2;--}}-->
-<!--{{--    $rnoOpinion = 3;--}}-->
-<!--{{--    $rdisagree = 4;--}}-->
-<!--{{--    $rstronglyDisagree = 5;--}}-->
-<!---->
-<!--{{--    $globalQuestion = "";--}}-->
-<!---->
-<!--{{--    $total = 0;?>--}}-->
+<!--**********************************************************************************************************************-->
+<!-------------------------------------------------------JavaScript--------------------------------------------------------->
+<!--**********************************************************************************************************************-->
 
-<!--{{--//    lisaScores[] = new String[19];--}}-->
-<!--{{--//    int points[] = new int[19];--}}-->
-<!--{{--//    String questions[] = new String[] { "E2", "F1", "P2", "E7", "E4", "P6", "E5", "F5", "P7", "P3", "E3", "P8",--}}-->
-<!--{{--//    "F3", "F2", "P5", "P1", "E6", "P4", "F4" };--}}-->
-<!--{{--//--}}-->
-<!--{{--//    int globalQuestionPoints = 0;--}}-->
-<!--{{--//--}}-->
-<!--{{--//    System.out.println("***************************************************************");--}}-->
-<!--{{--//    System.out.println("\t\t\t\t LEGEND");--}}-->
-<!--{{--//    System.out.println("\n\t\tStrongly Agree = sa");--}}-->
-<!--{{--//    System.out.println("\t\tAgree = a");--}}-->
-<!--{{--//    System.out.println("\t\tNo Opinion = n");--}}-->
-<!--{{--//    System.out.println("\t\tDisagree = d");--}}-->
-<!--{{--//    System.out.println("\t\tStrongly Disagree = sd");--}}-->
-<!--{{--//    System.out.println("\n");--}}-->
-<!--{{--//--}}-->
-<!--{{--//    System.out.println("***************************************************************");--}}-->
-<!--{{--//--}}-->
-<!--{{--//    System.out.println("What was the answer for global question 1? ");--}}-->
-<!--{{--//    globalQuestion = scr.next();--}}-->
-<!--{{--//    if (globalQuestion.equals("sa")) {--}}-->
-<!--{{--//    globalQuestionPoints = stronglyAgree;--}}-->
-<!--{{--//    } else if (globalQuestion.equals("a")) {--}}-->
-<!--{{--//    globalQuestionPoints = agree;--}}-->
-<!--{{--//    } else if (globalQuestion.equals("n")) {--}}-->
-<!--{{--//    globalQuestionPoints = noOpinion;--}}-->
-<!--{{--//    } else if (globalQuestion.equals("d")) {--}}-->
-<!--{{--//    globalQuestionPoints = disagree;--}}-->
-<!--{{--//    } else if (globalQuestion.equals("sd")) {--}}-->
-<!--{{--//    globalQuestionPoints = stronglyDisagree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//--}}-->
-<!--{{--//    for (int i = 0; i < lisaScores.length; i++) {--}}-->
-<!--{{--//    System.out.println("What was the answer for question " + questions[i] + "?");--}}-->
-<!--{{--//    lisaScores[i] = scr.next();--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//--}}-->
-<!--{{--//    for (int i = 0; i < lisaScores.length; i++) {--}}-->
-<!--{{--//    if ((questions[i].equals("E7")) || (questions[i].equals("F2"))) {--}}-->
-<!--{{--//    if (lisaScores[i].equals("sa")) {--}}-->
-<!--{{--//    points[i] = rStronglyAgree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (lisaScores[i].equals("a")) {--}}-->
-<!--{{--//    points[i] = rAgree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (lisaScores[i].equals("n")) {--}}-->
-<!--{{--//    points[i] = rNoOpinion;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (lisaScores[i].equals("d")) {--}}-->
-<!--{{--//    points[i] = rDisagree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (lisaScores[i].equals("sd")) {--}}-->
-<!--{{--//    points[i] = rStrongDisagree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//--}}-->
-<!--{{--//    } else { // regular question ratings--}}-->
-<!--{{--//    if (lisaScores[i].equals("sa")) {--}}-->
-<!--{{--//    points[i] = stronglyAgree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (lisaScores[i].equals("a")) {--}}-->
-<!--{{--//    points[i] = agree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (lisaScores[i].equals("n")) {--}}-->
-<!--{{--//    points[i] = noOpinion;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (lisaScores[i].equals("d")) {--}}-->
-<!--{{--//    points[i] = disagree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (lisaScores[i].equals("sd")) {--}}-->
-<!--{{--//    points[i] = stronglyDisagree;--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//--}}-->
-<!--{{--//    System.out.println("\n\n");--}}-->
-<!--{{--//--}}-->
-<!--{{--//    for (int i = 0; i < lisaScores.length; i++) { // Outputting the questions and point value--}}-->
-<!--{{--//    System.out.println("Question " + questions[i] + ": " + points[i] + " points.");--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//--}}-->
-<!--{{--//--}}-->
-<!--{{--//--}}-->
-<!--{{--//    for (int i = 0; i < points.length; i++) { // calculating total points--}}-->
-<!--{{--//    total = total + points[i];--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//--}}-->
-<!--{{--//    double compositeScore = (total / 19) * 20; // outputting composite score--}}-->
-<!--{{--//--}}-->
-<!--{{--//    int eScore = 0;--}}-->
-<!--{{--//    int fScore = 0;--}}-->
-<!--{{--//    int pScore = 0;--}}-->
-<!--{{--//--}}-->
-<!--{{--//--}}-->
-<!--{{--//    for (int i = 0; i < lisaScores.length; i++){--}}-->
-<!--{{--//    if (questions[i].charAt(0) == 'E'){--}}-->
-<!--{{--//    eScore += points[i];--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (questions[i].charAt(0) == 'P'){--}}-->
-<!--{{--//    pScore += points[i];--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    if (questions[i].charAt(0) == 'F'){--}}-->
-<!--{{--//    fScore += points[i];--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    }--}}-->
-<!--{{--//    System.out.println("");--}}-->
-<!--{{--//--}}-->
-<!--{{--//    System.out.println("Total 'E' score = " + eScore);--}}-->
-<!--{{--//    System.out.println("Total 'F' score  = " + fScore);--}}-->
-<!--{{--//    System.out.println("Total 'P' score =  " + pScore);--}}-->
-<!--{{--//--}}-->
-<!--{{--//--}}-->
-<!--{{--//    System.out.println("\n\n");--}}-->
-<!--{{--//    System.out.println("Global Score = " + globalQuestionPoints);--}}-->
-<!--{{--//    System.out.println("\n");--}}-->
-<!--{{--//    System.out.print("Composite Score = ");--}}-->
-<!--{{--//    System.out.printf("%.2f", compositeScore);--}}-->
+<script>
+    var $total = 0;
+    var $globalScoreFinal = 0;
+    var $eScore = 0;
+    var $fScore = 0;
+    var $pScore = 0;
+
+    var $globalScore = document.getElementsByName("global").valueOf();
+    const $E2 = document.getElementsByName("E2").valueOf();
+    const $F1 = document.getElementsByName("F1").valueOf();
+    const $P2 = document.getElementsByName("P2").valueOf();
+    const $E7 = document.getElementsByName("E7").valueOf();
+    const $E4 = document.getElementsByName("E4").valueOf();
+    const $P6 = document.getElementsByName("P6").valueOf();
+    const $E5 = document.getElementsByName("E5").valueOf();
+    const $F5 = document.getElementsByName("F5").valueOf();
+    const $P7 = document.getElementsByName("P7").valueOf();
+    const $P3 = document.getElementsByName("P3").valueOf();
+    const $E3 = document.getElementsByName("E3").valueOf();
+    const $P8 = document.getElementsByName("P8").valueOf();
+    const $F3 = document.getElementsByName("F3").valueOf();
+    const $F2 = document.getElementsByName("F2").valueOf();
+    const $P5 = document.getElementsByName("P5").valueOf();
+    const $P1 = document.getElementsByName("P1").valueOf();
+    const $E6 = document.getElementsByName("E6").valueOf();
+    const $P4 = document.getElementsByName("P4").valueOf();
+    const $F4 = document.getElementsByName("F4").valueOf();
 
 
+
+
+    function displayRadioValue($question) {
+
+        for(i = 0; i < $question.length; i++) {
+            if($question[i].checked) {
+                if ($question[i] === "global") {
+                    $globalScoreFinal += parseFloat($question[i].value);
+                    } else if (document.getElementsByName($question[i])  == "E2" || "E7" || "E4" || "E5" || "E3" || "E6") {
+                    $eScore += parseFloat($question[i].value);
+                    $total += parseFloat($question[i].value);
+                } else if (document.getElementsByName($question[i])  == "F1" || "F5" || "F3" || "F2" || "F4") {
+                    $fScore += parseFloat($question[i].value);
+                    $total += parseFloat($question[i].value);
+                } else if (document.getElementsByName($question[i])  == "P2" || "P6" || "P7" || "P3" || "P8" || "P5" || "P1" || "P4") {
+                    $pScore += parseFloat($question[i].value);
+                    $total += parseFloat($question[i].value)
+                }
+            }
+        }
+    }
+
+    function runEverything() {
+
+        document.getElementById("compositeScore").innerHTML = 0;
+        document.getElementById("globalAnswer").innerHTML = 0;
+
+        displayRadioValue($globalScore);
+        displayRadioValue($E2);
+        displayRadioValue($F1);
+        displayRadioValue($P2);
+        displayRadioValue($E7);
+        displayRadioValue($E4);
+        displayRadioValue($P6);
+        displayRadioValue($E5);
+        displayRadioValue($F5);
+        displayRadioValue($P7);
+        displayRadioValue($P3);
+        displayRadioValue($E3);
+        displayRadioValue($P8);
+        displayRadioValue($F3);
+        displayRadioValue($F2);
+        displayRadioValue($P5);
+        displayRadioValue($P1);
+        displayRadioValue($E6);
+        displayRadioValue($P4);
+        displayRadioValue($F4);
+
+        document.getElementById("globalAnswer").innerHTML = $globalScoreFinal;
+        document.getElementById("compositeScore").innerHTML = $total;
+        document.getElementById("fScore").innerHTML = $fScore;
+        document.getElementById("pScore").innerHTML = $pScore;
+        document.getElementById("eScore").innerHTML = $eScore;
+
+    }
+
+
+</script>
 
 
 
