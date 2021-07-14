@@ -836,7 +836,7 @@
 
 
 
-    function displayRadioValue($question) {
+    function displayGlobalValue($question) {
 
         for (i = 0; i < $question.length; i++) {
             if ($question[i].checked) {
@@ -844,21 +844,35 @@
                 {
                     $globalScoreFinal += parseFloat($question[i].value);
                 }
-                if ($question   === document.getElementsByName("E2") || document.getElementsByName("E7") || document.getElementsByName("E4") || document.getElementsByName("E5") || document.getElementsByName("E3") || document.getElementsByName("E6"))
-                {
-                    $eScore += parseFloat($question[i].value);
-                    $total += parseFloat($question[i].value);
-                }
-                if ($question === document.getElementsByName("F1") || document.getElementsByName("F5") || document.getElementsByName("F3") || document.getElementsByName("F2") || document.getElementsByName("F4"))
-                {
-                    $fScore += parseFloat($question[i].value);
-                    $total += parseFloat($question[i].value);
-                }
-                if ($question === document.getElementsByName("P2") || document.getElementsByName("P6")|| document.getElementsByName("P7") || document.getElementsByName("P3") || document.getElementsByName("P8") || document.getElementsByName("P5") || document.getElementsByName("P1") || document.getElementsByName("P4"))
-                {
-                    $pScore += parseFloat($question[i].value);
-                    $total += parseFloat($question[i].value)
-                }
+
+            }
+        }
+    }
+
+    function displayPValue ($question){
+        for (i = 0; i < $question.length; i++) {
+            if ($question === document.getElementsByName("P2") || document.getElementsByName("P6") || document.getElementsByName("P7") || document.getElementsByName("P3") || document.getElementsByName("P8") || document.getElementsByName("P5") || document.getElementsByName("P1") || document.getElementsByName("P4")) {
+                $pScore += parseFloat($question[i].value);
+                $total += parseFloat($question[i].value)
+            }
+        }
+    }
+
+    function displayEValue ($question){
+        for (i = 0; i < $question.length; i++) {
+            if ($question === document.getElementsByName("E2") || document.getElementsByName("E7") || document.getElementsByName("E4") || document.getElementsByName("E5") || document.getElementsByName("E3") || document.getElementsByName("E6")) {
+                $eScore += parseFloat($question[i].value);
+                $total += parseFloat($question[i].value);
+            }
+        }
+    }
+
+    function displayFValue ($question){
+        for (i = 0; i < $question.length; i++) {
+            if ($question === document.getElementsByName("F1") || document.getElementsByName("F5") || document.getElementsByName("F3") || document.getElementsByName("F2") || document.getElementsByName("F4"))
+            {
+                $fScore += parseFloat($question[i].value);
+                $total += parseFloat($question[i].value);
             }
         }
     }
@@ -868,26 +882,26 @@
 
 
 
-        displayRadioValue($globalScore);
-        displayRadioValue($E2);
-        displayRadioValue($F1);
-        displayRadioValue($P2);
-        displayRadioValue($E7);
-        displayRadioValue($E4);
-        displayRadioValue($P6);
-        displayRadioValue($E5);
-        displayRadioValue($F5);
-        displayRadioValue($P7);
-        displayRadioValue($P3);
-        displayRadioValue($E3);
-        displayRadioValue($P8);
-        displayRadioValue($F3);
-        displayRadioValue($F2);
-        displayRadioValue($P5);
-        displayRadioValue($P1);
-        displayRadioValue($E6);
-        displayRadioValue($P4);
-        displayRadioValue($F4);
+        displayGlobalValue($globalScore);
+        displayEValue($E2);
+        displayFValue($F1);
+        displayPValue($P2);
+        displayEValue($E7);
+        displayEValue($E4);
+        displayPValue($P6);
+        displayEValue($E5);
+        displayFValue($F5);
+        displayPValue($P7);
+        displayPValue($P3);
+        displayEValue($E3);
+        displayPValue($P8);
+        displayFValue($F3);
+        displayFValue($F2);
+        displayPValue($P5);
+        displayPValue($P1);
+        displayEValue($E6);
+        displayPValue($P4);
+        displayFValue($F4);
 
         document.getElementById("globalAnswer").innerHTML = $globalScoreFinal;
         document.getElementById("compositeScore").innerHTML = $total;
