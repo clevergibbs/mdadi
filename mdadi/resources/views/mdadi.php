@@ -769,6 +769,13 @@
     </button>
     </div>
 
+    <div class="container text-center">
+        <button type="button" onclick="clear()">
+            Clear
+        </button>
+    </div>
+
+
 <div class="container text-center">
     <div class="lead">
         Total 'E' Score =
@@ -834,8 +841,6 @@
     const $F4 = document.getElementsByName("F4").valueOf();
 
 
-
-
     function displayGlobalValue($question) {
 
         for (i = 0; i < $question.length; i++) {
@@ -852,8 +857,10 @@
     function displayPValue ($question){
         for (i = 0; i < $question.length; i++) {
             if ($question === document.getElementsByName("P2") || document.getElementsByName("P6") || document.getElementsByName("P7") || document.getElementsByName("P3") || document.getElementsByName("P8") || document.getElementsByName("P5") || document.getElementsByName("P1") || document.getElementsByName("P4")) {
-                $pScore += parseFloat($question[i].value);
-                $total += parseFloat($question[i].value)
+                if ($question[i].checked) {
+                    $pScore += parseFloat($question[i].value);
+                    $total += parseFloat($question[i].value)
+                }
             }
         }
     }
@@ -861,26 +868,27 @@
     function displayEValue ($question){
         for (i = 0; i < $question.length; i++) {
             if ($question === document.getElementsByName("E2") || document.getElementsByName("E7") || document.getElementsByName("E4") || document.getElementsByName("E5") || document.getElementsByName("E3") || document.getElementsByName("E6")) {
-                $eScore += parseFloat($question[i].value);
-                $total += parseFloat($question[i].value);
+                    if ($question[i].checked) {
+                        $eScore += parseFloat($question[i].value);
+                        $total += parseFloat($question[i].value);
+                    }
             }
         }
     }
 
     function displayFValue ($question){
         for (i = 0; i < $question.length; i++) {
-            if ($question === document.getElementsByName("F1") || document.getElementsByName("F5") || document.getElementsByName("F3") || document.getElementsByName("F2") || document.getElementsByName("F4"))
-            {
-                $fScore += parseFloat($question[i].value);
-                $total += parseFloat($question[i].value);
+            if ($question === document.getElementsByName("F1") || document.getElementsByName("F5") || document.getElementsByName("F3") || document.getElementsByName("F2") || document.getElementsByName("F4")) {
+                if ($question[i].checked) {
+                    $fScore += parseFloat($question[i].value);
+                    $total += parseFloat($question[i].value);
+                }
             }
         }
     }
 
 
     function runEverything() {
-
-
 
         displayGlobalValue($globalScore);
         displayEValue($E2);
@@ -903,17 +911,21 @@
         displayPValue($P4);
         displayFValue($F4);
 
+        $total = ($total / 19) * 20;
+
         document.getElementById("globalAnswer").innerHTML = $globalScoreFinal;
         document.getElementById("compositeScore").innerHTML = $total;
         document.getElementById("fScore").innerHTML = $fScore;
         document.getElementById("pScore").innerHTML = $pScore;
         document.getElementById("eScore").innerHTML = $eScore;
 
+         $total = 0;
+         $globalScoreFinal = 0;
+         $eScore = 0;
+         $fScore = 0;
+         $pScore = 0;
     }
-    var inp = document.getElementsByTagName('input');
-    for (var i = inp.length-1; i>=0; i--) {
-        if ('radio'===inp[i].type) inp[i].checked = false;
-    }
+
 
 </script>
 
