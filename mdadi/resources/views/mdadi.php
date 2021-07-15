@@ -769,12 +769,6 @@
     </button>
     </div>
 
-    <div class="container text-center">
-        <button type="button" onclick="clear()">
-            Clear
-        </button>
-    </div>
-
 
 <div class="container text-center">
     <div class="lead">
@@ -912,9 +906,10 @@
         displayFValue($F4);
 
         $total = ($total / 19) * 20;
+        $totalRounded = $total.toFixed(2);
 
         document.getElementById("globalAnswer").innerHTML = $globalScoreFinal;
-        document.getElementById("compositeScore").innerHTML = $total;
+        document.getElementById("compositeScore").innerHTML = $totalRounded;
         document.getElementById("fScore").innerHTML = $fScore;
         document.getElementById("pScore").innerHTML = $pScore;
         document.getElementById("eScore").innerHTML = $eScore;
