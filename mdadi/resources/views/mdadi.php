@@ -20,6 +20,8 @@
     <div class="container-fluid">
         <div class="title m-b-md">
             <h1 class="display-1 text-center">M.D.A.D.I. calculator</h1>
+            <h1 class="display-1 text-center">I will be changing the URL of this site to www.speechpathologytools.com</h1>
+            <h3 class="display-1 text-center">If you would like to see any features added please email info@speechpathologytools.com</h3>
         </div>
 
 <!---------------------------------------------------------------------------------------------------------------------
